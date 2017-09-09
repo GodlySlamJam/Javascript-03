@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+  .white{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+  }
+
+  .black{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    position: relative;
+  }
+
+  div{
+    top: 100px;
+    position: absolute;
+    height: 600px;
+    width: 600px;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div></div>
+  <button onclick = "xboard()">Create<button>
+    <input id = "xin"></input>
+    <input id = "yin"></input>
+    <script>
+    let inputx;
+    let inputy;
+
+    let board = [];
+    let xboard = () =>{
+      inputx = document.getElementById("xin").value;
+      inputy = document.getElementById("yin").value;
+      inputy = parseInt(inputy);
+      inputx = parseInt(inputx);
+      for(let x = 0; x < inputx;x++){
+        board.push([]);
+        for(let y = 0; y < inputy;y++){
+          board[x].push("X");
+
+        }
+      }
+      x = 0;
+      for(y = 0; y < inputy;y++){
+        board[x][y] = "Y";
+        x++;
+
+      }
+      console.log(board);
+
+      x = 0;
+      for(y = inputy - 1; y > -1;y--){
+        board[x][y] = "Y";
+        x++;
+
+      }
+      console.log(board);
+
+      let top;
+      $("div").append("<table>")
+      let z = 0;
+      while(z < inputy){
+        $("div").append("<th> </th>")
+        z++;
+      }
+
+      for(let x = 0; x < inputx;x++){
+        top = x * 10;
+        $("div").append("<tr>")
+        for(let y = 0; y < inputy;y++){
+          if(board[x][y] == "X"){
+            $("div").append("<td><div class= 'white' top = "+ top +"><div></td>");
+
+          }else if(board[x][y] == "Y"){
+            $("div").append("<td><div class= 'black' top = "+ top +"><div></td>");
+
+          }
+        }
+        $("div").append("</tr>")
+      }
+      $("div").append("</table>")
+    }
+
+    </script>
+
+  </body>
+  </html>
