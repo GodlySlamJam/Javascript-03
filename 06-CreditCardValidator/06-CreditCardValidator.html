@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <input id="in"></input>
+<script>
+let card = document.getElementById("in").value;
+let cardl = card.length;
+
+let temp = evenodd();
+console.log(temp)
+
+function evenodd(){
+  parseInt(card);
+
+  card.filter((x)=> {
+    return x % 2 == 0
+  })
+
+}
+
+</script>
+  </body>
+</html>

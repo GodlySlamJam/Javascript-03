@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <script>
+    let obj1 = {thing : "hi",
+            Game : "Neighbor",
+            pokemon : "peecachu"}
+
+    let obj2 = {thing : "Neighbor",
+            Game : "Neighbor",
+            pokemon : "peecachu"}
+
+    let array = Object.keys(obj1);
+    let arrays = Object.keys(obj2);
+
+    for(let x = 0;x < array.length;x++){
+      for(let y = 0;y < arrays.length;y++){
+        if(obj1[array[x]] == obj2[arrays[y]])
+        console.log("true " + obj1[array[x]] + " " + x + "-" + obj2[arrays[y]] + " " + y)
+      }
+    }
+    </script>
+  </body>
+</html>
