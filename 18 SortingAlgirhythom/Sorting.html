@@ -12,12 +12,9 @@
       for(let y = 0;y < nums.length;y++){
         let temps = nums[x];
         let temp = nums[y]
-        if(nums[x] > nums[y]){
+        if(nums[x] < nums[y]){
           nums[x] = temp;
           nums[y] = temps;
-
-        }else if(nums[x] < nums[y]){
-
         }
       }
     }
