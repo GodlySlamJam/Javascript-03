@@ -6,21 +6,116 @@
   <body>
 
     <input id="in"></input>
+    <button onclick = "cardcalc()">Submit</button>
 <script>
-let card = document.getElementById("in").value;
-let cardl = card.length;
+let cardl;
+let card;
+let arr = [];
+function cardcalc(){
 
-let temp = evenodd();
-console.log(temp)
+  card = document.getElementById("in").value;
+  console.log(card);
+  cardl = card.length;
 
-function evenodd(){
-  parseInt(card);
+    if(cardl == 15){
+      odd();
 
-  card.filter((x)=> {
-    return x % 2 == 0
-  })
+    }else if (cardl == 16) {
+      even();
+
+
+    }
 
 }
+
+
+
+
+function even(){
+  let y = 0;
+  for(let x = 0;x < cardl;x++){
+    y++;
+    card = card.toString();
+    let temp = card.substr(x, 1);
+    console.log(temp);
+    arr.push(temp);
+
+  }
+  console.log(arr);
+
+  for(let x = 0;x < arr.length;x++){
+    arr[x] = arr[x]*2;
+    if(arr[x] > 9){
+      arr[x] -= 9;
+    }
+    x++;
+  }
+  for(let x = 0;x < arr.length;x++){
+    arr[x] = parseInt(arr[x]);
+  }
+  let total = 0;
+  for(let x = 0;x < arr.length;x++){
+    total += arr[x];
+
+  }
+console.log(arr);
+console.log(total);
+let ttemp = total;
+total = Math.round(total);
+if(ttemp != total){
+  alert("not valid");
+}else{
+  alert("valid");
+}
+}
+
+
+
+function odd(){
+  let y = 0;
+  for(let x = 0;x < cardl;x++){
+    y++;
+    card = card.toString();
+    let temp = card.substr(x, 1);
+    console.log(temp);
+    arr.push(temp);
+
+  }
+  console.log(arr);
+
+  for(let x = 0;x < arr.length;x++){
+    if(x < 13){
+    x++;
+  }
+
+if(x != 14){
+    arr[x] = arr[x]*2;
+    if(arr[x] > 9){
+      arr[x] -= 9;
+    }
+  }
+  }
+  console.log(arr);
+  for(let x = 0;x < arr.length;x++){
+    arr[x] = parseInt(arr[x]);
+  }
+  console.log(arr);
+  let total = 0;
+  for(let x = 0;x < arr.length;x++){
+    total += arr[x];
+
+  }
+console.log(arr);
+console.log(total);
+let ttemp = total;
+total = Math.round(total);
+if(ttemp != total){
+  alert("not valid");
+}else{
+  alert("valid");
+}
+}
+
 
 </script>
   </body>

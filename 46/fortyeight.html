@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <script>
+
+
+    $("body").append(`
+      <ul>
+        <li style="color:lime" onclick="item()" id = "Central Park">Central Park</li>
+        <li style ="color:lime" onclick="item()" id = "Statue of Liberty">Statue of Liberty</li>
+        <li style="color:blue" onclick="item()" id = "Empire State Building"> Empire State Building</li>
+        <li style ="color:orange" onclick="item()" id = "Rockefeller Center">Rockefeller Center</li>
+        <li style ="color: red" onclick="item()" id = "Times Square">Times Square</li>
+        <li style = "color:orange" onclick="item()" id = "High Line">High Line</li>
+      </ul>
+      `);
+
+      function item(){
+        let temp = event.target.id;
+        let tempv = document.getElementById(temp).style.color;
+        console.log(tempv);
+        console.log(temp);
+
+      }
+    </script>
+
+  </body>
+</html>

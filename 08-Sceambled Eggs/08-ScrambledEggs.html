@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <input id="first"></input>
+    <input id="second"></input>
+    <button onclick="scramble()">Scramble</button>
+
+      <script>
+      function scramble(){
+        let ino = document.getElementById("first").value;
+        let ins = document.getElementById("second").value;
+
+        let inoar = [];
+        let insar = [];
+        let insl = ins.length;
+
+        for(let x = 0;x < ino.length;x++){
+          let temp = ino.substr(x, 1)
+          inoar.push(temp)
+        }
+        for(let a = 0;a < ins.length;a++){
+          let temp = ins.substr(a, 1)
+          insar.push(temp)
+        }
+        let num = 0;
+          for(let w = 0; w < ins.length;w++){
+        for(let y = 0; y < ins.length;y++){
+
+          if(insar[w] == inoar[y]){
+            num++;
+          }
+        }
+      }
+        if(num == insl){
+          console.log("valid")
+        }else{
+          console.log("invalid");
+        }
+      }
+      </script>
+
+  </body>
+</html>
