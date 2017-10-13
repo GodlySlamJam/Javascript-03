@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <script>
+    let nums = [54,23,23,3,4,55,2,3,5,7,6,3,2,1,9,4,6,7];
+
+    for(let x = 0;x < nums.length;x++){
+      for(let y = 0;y < nums.length;y++){
+        let temps = nums[x];
+        let temp = nums[y]
+        if(nums[x] < nums[y]){
+          nums[x] = temp;
+          nums[y] = temps;
+        }
+      }
+    }
+
+    console.log(nums);
+    </script>
+  </body>
+</html>
