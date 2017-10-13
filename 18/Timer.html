@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <input id = "min"></input>
+  <input id = "secound"></input>
+  <button onclick = "stop">Stop Watch</button>
+  <button onclick = "timer">Timer</button>
+  <button onclick = "alarm">Alarm Clock</button>
+  <p id ="time"></p>
+
+  <script>
+  let time = 0;
+  function timer(){
+    let timea = document.getElementById("min");
+    timea = parseInt(timea);
+    timea = timea * 60;
+    let times = document.getElementById("secound");
+    times = parseInt(times);;
+    time = times + timea;
+    timerk();
+  }
+
+  function timerk(){
+    console.log("HI")
+    setTimeout(function () {
+      let p = document.getElementById("time").value;
+      time = time - 1;
+      p = time;
+      timerk();
+
+
+    }, 999)
+
+
+  }
+  </script>
+
+</body>
+</html>
